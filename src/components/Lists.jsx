@@ -1,13 +1,17 @@
 import React, { useContext } from 'react'
 import { listContext } from '../App'
 
-export default function List() {
-    const {list}=useContext(listContext)
+export default function Lists() {
+    const {list,setList}=useContext(listContext)
+    
 
     function _delete(index){
-        list.splice(index,1)
-        console.log(list)
+        let updateList=list
+        updateList.splice(index,1)
+        setList([...updateList])
+        
     }
+    
   return (
     <div>
     {
